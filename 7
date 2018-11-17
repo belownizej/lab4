@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <time.h>
+
+int sprawdz(int l, int i, int liczba[]){
+int j;
+for(j=0; j<i; ++j){
+if(l==liczba[j]){
+l=rand()%5;
+l=sprawdz(l,i,liczba);
+}
+}
+return l;
+}
+
+void wczytaj(int tab[]){
+int i;
+printf("Podaj 5 roznych liczb:\n\n");
+for(i=0; i<5; ++i)
+{
+scanf("%d",&tab[i]);
+}
+}
+
+void losowanie(int liczba[]){
+int i,l;
+for(i=0; i<5; ++i)
+{
+l=rand()%5;
+l=sprawdz(l,i,liczba);
+liczba[i]=l;
+}
+}
+
+void wypisz(int tab[], int liczba[]){
+int i;
+printf("\n\nPo zmianie kolejnosci:\n\n");
+for(i=0; i<5; ++i)
+{
+printf("%d\n",tab[liczba[i]]);
+}
+}
+
+int main()
+{
+int liczba[5];
+srand(time(NULL));
+int tab[5];
+
+wczytaj(tab);
+losowanie(liczba);
+wypisz(tab,liczba);
+
+return 0;
+}
