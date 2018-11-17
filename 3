@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <time.h>
+#include <math.h>
+int f2()
+{
+//tablica
+int tab[30],i=0;
+float suma;
+srand(time(NULL));
+//losowanie liczb
+do
+{
+tab[i]=(-100+rand()%200);
+i++;
+}
+while(i<30);
+//wypisanie liczb pseudolosowych
+printf("\nWylosowane liczby:\n\n");
+i=0;
+do
+{
+printf("%d,",tab[i]);
+i++;
+}
+while(i<30);
+//sumowanie liczb
+for(i=0;i<30;i++ )
+{
+suma+=tab[i];
+}
+float srednia,x,sd;
+srednia=suma/30;
+printf("\n\nSrednia tych liczb wynosi: %f\n",srednia);
+for(i=0; i<30; ++i)
+{
+x+= pow(tab[i]-srednia,2);
+sd=sqrt(x/30);
+}
+printf("\n\Odchylenie standardowe tych liczb wynosi: %f\n",sd);
+}
+
+int main()
+{
+f2();
+return 0;
+}
