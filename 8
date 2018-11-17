@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <time.h>
+void zamiana(int *a, int *b){
+int temp;
+temp=*a;
+*a=*b;
+*b=temp;
+}
+
+int main()
+{
+srand(time(NULL));
+int t[10];
+int i,j;
+
+for (i=0 ; i<=9 ; ++i){
+t[i]=rand() % 20;
+}
+printf("Przed zamiana:\n\n");
+for (i=0 ; i<=9 ;++i){
+printf("%d\t",t[i]);
+}
+printf("\n");
+
+//zamiana polowek
+printf("Po zamianie:\n\n");
+for(i=0,j=5 ; i<=4,j<=9 ; ++i,++j)
+{
+zamiana(&t[i],&t[j]);
+}
+for(i=0 ; i<=9; ++i)
+{
+printf("%d\t",t[i]);
+}
+printf("\n");
+return 0;
+}
