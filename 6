@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int f4()
+{
+float a[4],suma=0,x;
+int n=3,i;
+
+printf("\nWprowadz wartosci do tablicy:\n");
+for(i=n;i>=0;i--)
+{
+printf("",i);
+scanf("%f",&a[i]);
+}
+printf("\nPodaj wartosc X :: ");
+scanf("%f",&x);
+for(i=n;i>0;i--)
+{
+suma=(suma+a[i])*x;
+}
+suma=suma+a[0];
+printf("\nWartosc wielomianu = [ %f ]\n",suma);
+}
+
+int main()
+{
+f4();
+return 0;
+}
